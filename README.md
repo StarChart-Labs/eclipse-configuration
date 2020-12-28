@@ -9,3 +9,5 @@ Currently, Eclipse is the supported IDE for development of StarChart Labes proje
 - `Java > CodeStyle > Code Templates` is imported from codetemplates.xml
 
 It is also recommended to turn on "save actions", under the Java Editor settings, to format saved lines and perform other cleanup operations
+
+If you do not have an existing Eclipse inatallation, feel free to follow the [recommended setup](./EclipseSetup.md) used by most organization members

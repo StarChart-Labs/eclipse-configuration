@@ -27,40 +27,21 @@ Finally, install the "Buildship Gradle Integration" Plug-in and "Test NG" plug-i
 
 # Configuration Customization
 
-Edit eclipse.ini to:
+Edit eclipse.ini to include, under `-vmargs`:
 
 ```
--startup
-plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar
---launcher.library
-plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740
--showsplash
-org.eclipse.platform
---launcher.defaultAction
-openFile
---launcher.appendVmargs
---launcher.GTK_version
-2
--vmargs
--Dosgi.requiredJavaVersion=1.8
 -Duser.name=(username)
 -Xms256m
 -Xmx2048m
--Dorg.eclipse.swt.browser.DefaultType=webkit
--Dorg.eclipse.swt.browser.UseWebKitGTK=true
 ```
 
 These edits do the following:
 
-- `--launcher.GTK_version 2`
-  - Fixes issues with some linux versiosn where it freezes creating projects and new classes. The newline between the switch and the 2 is intentional
 - `-Duser.name`
   - Sets the value of the `user` variable in Eclipse templates
 - `-Xms256m`
   - Increases the minimum amount of memory allocated for the Java process running Eclipse to 256 MB
 - `-Xmx2048m`
   - Increases the maximum allowed memory for the Java process running Eclipse to 2 GB
-- `-Dorg.eclipse.swt.browser.DefaultType=webkit` && `-Dorg.eclipse.swt.browser.UseWebKitGTK=true`
-  - The two above together prevent errors when using the Markdown plug-in to preview *.md files
 
 Finally, setup JDK bindings
